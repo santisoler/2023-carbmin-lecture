@@ -2,6 +2,9 @@
 /* Global configurations */
 /* ===================== */
 
+// Montserrat font
+@import url("css/fonts/Montserrat/webfonts/Montserrat.css");
+
 // Define some variables for font sizes and colors
 // -----------------------------------------------
 @base_font_size: 64px;
@@ -32,6 +35,12 @@
 /* ====================== */
 
 .reveal {
+
+   // Override font family
+   h1, h2, h3, h4, h5, h6, p, li, a {
+     font-family: 'Montserrat', sans-serif;
+   }
+
   // --------------------------------
   // Override some default CSS styles
   // --------------------------------

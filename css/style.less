@@ -1,0 +1,89 @@
+/* ===================== */
+/* Global configurations */
+/* ===================== */
+
+// Define some variables for font sizes and colors
+// -----------------------------------------------
+@base_font_size: 64px;
+@h1_font_size: 2em;
+@h2_font_size: 1.5em;
+@h3_font_size: 1.2em;
+@h4_font_size: 1em;
+
+@main_color: var(--r-main-color);
+@background_color: var(--r-background-color);
+@link_hover_color: var(--r-link-color-hover);
+
+// Override default variables of Reveal.js style
+// ---------------------------------------------
+:root {
+  // Don't uppercase headings
+  --r-heading-text-transform: normal;
+  // overwrite font sizes
+  --r-main-font-size: @base_font_size;
+  --r-heading1-size: @h1_font_size;
+  --r-heading2-size: @h2_font_size;
+  --r-heading3-size: @h3_font_size;
+  --r-heading4-size: @h4_font_size;
+}
+
+/* ====================== */
+/* Configure reveal style */
+/* ====================== */
+
+.reveal {
+  // --------------------------------
+  // Override some default CSS styles
+  // --------------------------------
+  ul,
+  ol {
+    margin-left: 0;
+  }
+
+  pre code {
+    max-height: 1080px; // increase max height of code blocks
+  }
+
+  blockquote {
+    margin-left: 0;
+    margin-right: 0;
+    width: 95%;
+  }
+
+  // ----------------------------------------------------
+  // Define custom flexbox classes (similar to bootstrap)
+  // ----------------------------------------------------
+  .d-flex {
+    display: flex;
+  }
+
+  .align-center {
+    align-items: center;
+  }
+
+  .justify-center {
+    justify-content: center;
+  }
+
+  .centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  // ---------------------------
+  // Define other custom classes
+  // ---------------------------
+  .orange {
+    color: #c44500;
+  }
+
+  .green {
+    color: #71ad00;
+  }
+
+  .red {
+    color: #ad0018;
+  }
+}

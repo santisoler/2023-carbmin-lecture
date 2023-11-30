@@ -8,20 +8,45 @@
 
 ## Geophysics
 
-- Gravity field
-- Magnetic field
-- Electromagnetic fields
-- Mechanical waves propagation
+<!-- - Gravity field -->
+<!-- - Magnetic field -->
+<!-- - Electromagnetic fields -->
+<!-- - Mechanical waves propagation -->
 
+<div class="d-flex flex-row">
+  <div class="flex-1">
+    <p class="font-s mb-0">Gravity field</p>
+    <img src="/figs/gravity-earth.jpg" alt="" style="max-height: 350px">
+  </div>
+  <div class="flex-1">
+    <p class="font-s mb-0">Magnetic field</p>
+    <img src="/figs/earth-magnetic-field.jpg" alt="" style="max-height: 350px">
+  </div>
+</div>
+
+<div class="d-flex flex-row">
+  <div class="flex-1">
+    <p class="font-s mb-0">Electromagnetic fields</p>
+    <img src="/figs/skytem_view.jpg" alt="" style="max-height: 350px">
+  </div>
+  <div class="flex-1">
+    <p class="font-s mb-0">Wave propagation</p>
+    <img src="/figs/seismic-waves.jpg" alt="" style="max-height: 350px">
+  </div>
+</div>
 
 ---
 
 ### Geophysics: all about physical properties
 
+<div class="r-stretch centered">
+
 - Density
 - Magnetic susceptibility
 - Conductivity
 - Wave velocity
+
+</div>
 
 ---
 

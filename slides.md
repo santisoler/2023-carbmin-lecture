@@ -77,6 +77,8 @@
 
 ## Forward model
 
+<iframe class="d-flex flex-row justify-center" src="figs/3d-plot-l2-distance.html" frameborder="0" style="width: 100%; height: 100vh;"></iframe>
+
 ---
 
 ### Inverse model

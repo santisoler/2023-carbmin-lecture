@@ -16,6 +16,7 @@ dependencies:
   - verde
   - harmonica
   # Scientific stack
+  - matplotlib
   - pygmt
   - xarray
   - numpy

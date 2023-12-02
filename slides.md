@@ -50,54 +50,275 @@
 
 ---
 
+## Physical properties affect fields
+
 <!-- Cartoon of dense object and gravity anomaly -->
 
 <!-- Cartoon of sus object and magnetic anomaly -->
 
 ---
 
+
 ## What's in the subsurface?
 
-- Geophysical surveys
+<div class="r-stretch">
+<div class="centered">
+<img src="figs/surveys.svg" alt="" style="width: 70%">
+</div>
+</div>
 
 ---
 
-### Gravity data
+### Gravity disturbances
 
 <!-- Global bouguer map -->
 
----
+<div class="r-stretch">
+<img src="figs/earth-bouguer.png" alt="">
+</div>
 
-### Magnetic data
-
-<!-- Global magnetic anomaly -->
-<!-- Maybe zoom in the mid-ocean ridge -->
 
 ---
 
-## Forward model
+### Magnetic anomalies
 
-<iframe class="d-flex flex-row justify-center" src="figs/3d-plot-l2-distance.html" frameborder="0" style="width: 100%; height: 100vh;"></iframe>
+<div class="r-stretch">
+<img src="figs/earth-mag.png" alt="">
+</div>
+
+---
+
+
+### Mid ocean ridges
+
+<div class="r-stretch">
+<div class="centered">
+
+<div>
+<p>Gravity disturbances</p>
+<img src="figs/ridge-gravity.png" alt="">
+</div>
+
+<div>
+<p>Magnetic anomalies</p>
+<img src="figs/ridge-mag.png" alt="">
+</div>
+
+</div>
+</div>
 
 ---
 
-### Inverse model
+### Forward problem
+
+Given a **model** ($\mathbf{m}$) of the subsurface, we can <br>
+_forward model_ the gravity or magnetic fields (**data** $\mathbf{d}$):
+
+<div class="d-flex flex-row">
+
+<div class="flex-1 d-flex flex-column justify-center">
+
+`$$ \mathbf{d} = f(\mathbf{m}) $$`
+
+</div>
+
+<div class="flex-1">
+
+<img src="figs/model-cartoon.png" alt="">
+
+</div>
+
+</div>
 
 ---
+
+### Inverse problem
+
+Given some **data** ($\mathbf{d}$), can we get a **model** of the subsurface?
+
+<div class="r-stretch">
+<img src="figs/model-unknown-cartoon.png" alt="">
+</div>
+
+---
+
+<div class="r-stretch">
+
+<div class="centered">
+
+<img src="figs/forward-inverse-chart.svg" alt="" style="width: 65%">
+
+</div>
+</div>
+
+---
+
+## Inverse problem
+
+$$
+  \operatorname*{min}\limits_{\mathbf{m}} \phi(\mathbf{m}) =
+  \textcolor{#a6da95}{\phi_d}(\mathbf{m}) +
+  \beta \textcolor{#ee99a0}{\phi_m}(\mathbf{m})
+$$
+$$
+  \text{s.t.}
+  \quad
+  \phi_d \le \phi_d^*
+  \quad
+  ,
+  \quad
+  \mathbf{m}_L \le \mathbf{m} \le \mathbf{m}_U
+$$
+
+
+<div class="d-flex flex-row justify-center align-center gap-3 font-s">
+
+<p style="color: #a6da95;">Data misfit:</p>
+
+$$
+  \phi_d(\mathbf{m}) =
+  \lVert \mathbf{W}_d \left( \mathbf{d} - f(\mathbf{m}) \right) \rVert^2
+$$
+
+</div>
+
+<div class="d-flex flex-row justify-center align-center gap-3 font-s">
+
+<p style="color: #ee99a0;">Regularization term:</p>
+
+$$
+  \phi_m(\mathbf{m})
+$$
+
+</div>
+
+---
+
+<!-- .slide: class="center" -->
 
 ## Carbon mineralization
 
 ---
 
+<!-- .slide: class="center data-auto-animate" -->
+
 ### Physical properties of ultramafic rocks
 
-<!-- plots of cutts, see slides -->
+<div class="d-flex flex-row justify-around align-center gap-1">
+
+<div class="flex-1">
+<img src="figs/phys-properties.png" alt="" style="padding: 0.1em; background-color: #eaeaea;">
+</div>
+
+<div class="d-flex flex-column align-start font-s">
+
+**Loss of Ignition** (LOI):
+
+- Proxy variable for alteration
+- 5%-13%: **high** carbonation potential
+- **Density** and **susceptibility** change with LOI
+
+<p></p>
+
+Serpentinized rocks with **good potential**:
+
+- **Low** density
+- ~**High** susceptibility
+
+</div>
+
+</div>
+
+---
+
+<!-- .slide: class="center" data-auto-animate -->
+
+### Physical properties of ultramafic rocks
+
+<div class="d-flex flex-row justify-around align-center gap-1">
+
+<div class="flex-1">
+<img src="figs/phys-properties.png" alt="" style="padding: 0.1em; background-color: #eaeaea;">
+</div>
+
+<div class="flex-1">
+<img src="figs/cross-plot-phys-props.png" alt="" style="width: 80%;">
+</div>
+
+</div>
 
 ---
 
 ### Real world data: Timmins, ON
 
-<!-- maps -->
+Airborne gradiometry and magnetic data <!-- .element: class="font-s" -->
+
+<div class="r-stretch">
+
+<div class="d-flex centered flex-row justify-center">
+
+<div class="flex-2">
+<img src="figs/timmins-data-maps.png" alt="">
+</div>
+<div class="flex-1">
+<img src="figs/ontario-map.png" alt="">
+</div>
+
+</div>
+
+</div>
+
+<div class="d-flex justify-end flex-row">
+<img src="figs/canada-nickel.png" alt="">
+</div>
+
+---
+
+### Inversion of magnetic data
+
+<div class="r-stretch">
+<div class="centered">
+<img src="figs/l2-mag-result.png" alt="" style="width: 90%">
+</div>
+</div>
+
+---
+
+### Inversion of gravity data
+
+<div class="r-stretch">
+<div class="centered">
+<img src="figs/l2-gravity-result.png" alt="" style="width: 90%">
+</div>
+</div>
+
+---
+
+### Cross plot of physical properties
+
+<div class="r-stretch">
+<div class="centered">
+<img src="figs/l2-cross-plot.png" alt="" style="height: 80%">
+</div>
+</div>
+
+---
+
+### Estimations of carbonation potential
+
+<div class="r-stretch">
+<div class="centered">
+<img src="figs/l2-potential-estimation.png" alt="" style="height: 80%">
+</div>
+</div>
+
+---
+
+### Estimations of carbonation potential
+
+<div class="d-flex justify-center" style="height: 100%">
+<iframe src="figs/3d-plot-l2-distance.html" frameborder="0" style="height: 100vh; width: 70vw;"></iframe>
+</div>
 
 ---
 

@@ -62,7 +62,14 @@
       Reveal.initialize({
         // Use local version of katex
         katex: {
-          local: "katex",
+          version: 'latest',
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+            {left: '\\(', right: '\\)', display: false},
+            {left: '\\[', right: '\\]', display: true}
+          ],
+          ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre']
         },
         // Load plugins
         plugins: [RevealMarkdown, RevealMath.KaTeX, RevealHighlight],
@@ -77,7 +84,7 @@
         // Transition speed
         transitionSpeed: "default", // default/fast/slow
         // Transition style for full page slide backgrounds
-        backgroundTransition: "none", // none/fade/slide/convex/concave/zoom
+        backgroundTransition: "slide", // none/fade/slide/convex/concave/zoom
         // Display presentation control arrows
         controls: true,
         // Help the user learn the controls by providing hints, for example by

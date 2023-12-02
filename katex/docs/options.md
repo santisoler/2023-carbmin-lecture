@@ -1,0 +1,87 @@
+---
+id: options
+title: Options
+---
+You can provide an object of options as the last argument to [`katex.render` and `katex.renderToString`](api.md). Available options are:
+
+- `displayMode`: `boolean` (default: `false`). If `true` the math will be rendered in display mode. If `false` the math will be rendered in inline mode. Differences between the two modes include:
+  - Display mode starts in `\displaystyle`, so `\int` and `\sum` are large, for example; while inline mode starts in `\textstyle`, where subscripts and superscripts usually don't stack on top of operators like `\sum`. You can always manually switch between `\displaystyle` and `\textstyle` using those commands.
+  - Display mode centers math on its own line and disables automatic line breaking (though you can customize this behavior with [custom CSS](issues.md)). In inline mode, KaTeX allows line breaks after outermost relations (like `=` or `<`) or binary operators (like `+` or `\times`), the same as TeX.
+- `output`: `string`. Determines the markup language of the output. The valid choices are:
+  - `html`: Outputs KaTeX in HTML only.
+  - `mathml`: Outputs KaTeX in MathML only.
+  - `htmlAndMathml`: Outputs HTML for visual rendering and includes MathML for accessibility. This is the default.
+- `leqno`: `boolean`. If `true`, display math has `\tag`s rendered on the left instead of the right, like `\usepackage[leqno]{amsmath}` in LaTeX.
+- `fleqn`: `boolean`. If `true`, display math renders flush left with a `2em` left margin, like `\documentclass[fleqn]` in LaTeX with the `amsmath` package.
+- `throwOnError`: `boolean`. If `true` (the default), KaTeX will throw a `ParseError` when it encounters an unsupported command or invalid LaTeX. If `false`, KaTeX will render unsupported commands as text, and render invalid LaTeX as its source code with hover text giving the error, in the color given by `errorColor`.
+- `errorColor`: `string`. A color string given in the format `"#XXX"` or `"#XXXXXX"`. This option determines the color that unsupported commands and invalid LaTeX are rendered in when `throwOnError` is set to `false`. (default: `#cc0000`)
+- `macros`: `object`. A collection of custom macros.
+  - Each macro is a key-value pair where the key is a new command name and the value is the expansion of the macro.
+  - Example: `macros: {"\\R": "\\mathbb{R}"}`
+  - More precisely, each property of `macros` can have a name that starts with a backslash like `"\\foo"` (defining command `\foo`) or is a single character like `"α"` (defining the equivalent of a TeX active character), and a value that is one of the following:
+    - A string with the LaTeX expansion of the macro (which will be recursively expanded when used). The string can invoke (required) arguments via `#1`, `#2`, etc.
+    - A function that accepts an instance of `MacroExpander` as first argument and returns the expansion as a string. `MacroExpander` is an internal API and subject to non-backwards compatible changes. See [`src/defineMacro.js`](https://github.com/KaTeX/KaTeX/blob/main/src/defineMacro.js) for its usage.
+    - An expansion object matching [an internal `MacroExpansion` specification](https://github.com/KaTeX/KaTeX/blob/main/src/defineMacro.js), which is what results from global `\def` or `\let`. For example, you can simulate the effect of `\let\realint=\int` via `{"\\realint": {tokens: [{text: "\\int", noexpand: true}], numArgs: 0}}`.
+  - *This object will be modified* if the LaTeX code defines its own macros via `\gdef` or `\global\let` (or via `\def` or `\newcommand` or `\let` when using `globalGroup`). This enables consecutive calls to KaTeX to share state (in particular, user macro definitions) if you pass in the same `macros` object each time.
+- `minRuleThickness`: `number`. Specifies a minimum thickness, in ems, for fraction lines, `\sqrt` top lines, `{array}` vertical lines, `\hline`, `\hdashline`, `\underline`, `\overline`, and the borders of `\fbox`, `\boxed`, and `\fcolorbox`. The usual value for these items is `0.04`, so for `minRuleThickness` to be effective it should probably take a value slightly above `0.04`, say `0.05` or `0.06`. Negative values will be ignored.
+- `colorIsTextColor`: `boolean`. In early versions of both KaTeX (<0.8.0) and MathJax, the `\color` function expected the content to be a function argument, as in `\color{blue}{hello}`. In current KaTeX, `\color` is a switch, as in `\color{blue} hello`. This matches LaTeX behavior. If you want the old `\color` behavior, set option `colorIsTextColor` to true.
+- `maxSize`: `number`. All user-specified sizes, e.g. in `\rule{500em}{500em}`, will be capped to `maxSize` ems. If set to `Infinity` (the default), users can make elements and spaces arbitrarily large.
+- `maxExpand`: `number`. Limit the number of macro expansions to the specified number, to prevent e.g. infinite macro loops. If set to `Infinity`, the macro expander will try to fully expand as in LaTeX. (default: 1000)
+- `strict`: `boolean` or `string` or `function` (default: `"warn"`). If `false` or `"ignore`", allow features that make writing LaTeX convenient but are not actually supported by (Xe)LaTeX (similar to MathJax). If `true` or `"error"` (LaTeX faithfulness mode), throw an error for any such transgressions. If `"warn"` (the default), warn about such behavior via `console.warn`. Provide a custom function `handler(errorCode, errorMsg, token)` to customize behavior depending on the type of transgression (summarized by the string code `errorCode` and detailed in `errorMsg`); this function can also return `"ignore"`, `"error"`, or `"warn"` to use a built-in behavior.  A list of such features and their `errorCode`s:
+
+  - `"unknownSymbol"`: Use of unknown Unicode symbol, which will likely also
+    lead to warnings about missing character metrics, and layouts may be
+    incorrect (especially in terms of vertical heights).
+  - `"unicodeTextInMathMode"`: Use of Unicode text characters in math mode.
+  - `"mathVsTextUnits"`: Mismatch of math vs. text commands and units/mode.
+  - `"commentAtEnd"`: Use of `%` comment without a terminating newline.
+    LaTeX would thereby comment out the end of math mode (e.g. `$`),
+    causing an error.
+  - `"htmlExtension"`: Use of HTML extension (`\html`-prefixed) commands,
+    which are provided for HTML manipulation.
+
+  A second category of `errorCode`s never throw errors, but their strictness
+  affects the behavior of KaTeX:
+
+  - `"newLineInDisplayMode"`: Use of `\\` or `\newline` in display mode
+    (outside an array/tabular environment).  In strict mode, no line break
+    results, as in LaTeX.
+
+- `trust`: `boolean` or `function` (default: `false`). If `false` (do not trust input), prevent any commands like `\includegraphics` that could enable adverse behavior, rendering them instead in `errorColor`. If `true` (trust input), allow all such commands. Provide a custom function `handler(context)` to customize behavior depending on the context (command, arguments e.g. a URL, etc.).  A list of possible contexts:
+
+  - `{command: "\\url", url, protocol}`
+  - `{command: "\\href", url, protocol}`
+  - `{command: "\\includegraphics", url, protocol}`
+  - `{command: "\\htmlClass", class}`
+  - `{command: "\\htmlId", id}`
+  - `{command: "\\htmlStyle", style}`
+  - `{command: "\\htmlData", attributes}`
+
+  Here are some sample trust settings:
+
+  - Forbid specific command: `trust: (context) => context.command !== '\\includegraphics'`
+  - Allow specific command: `trust: (context) => context.command === '\\url'`
+  - Allow multiple specific commands: `trust: (context) => ['\\url', '\\href'].includes(context.command)`
+  - Allow all commands with a specific protocol: `trust: (context) => context.protocol === 'http'`
+  - Allow all commands with specific protocols: `trust: (context) => ['http', 'https', '_relative'].includes(context.protocol)`
+  - Allow all commands but forbid specific protocol: `trust: (context) => context.protocol !== 'file'`
+  - Allow certain commands with specific protocols: `trust: (context) => ['\\url', '\\href'].includes(context.command) && ['http', 'https', '_relative'].includes(context.protocol)`
+
+- `globalGroup`: `boolean`  (default: `false`). Run KaTeX code in the global group. As a consequence, macros defined at the top level by `\def` and `\newcommand` are added to the `macros` argument and can be used in subsequent render calls. In LaTeX, constructs such as `\begin{equation}` and `$$` create a local group and prevent definitions other than `\gdef` from becoming visible outside of those blocks, so this is KaTeX's default behavior.
+
+For example:
+
+```js
+const macros = {
+  "\\RR": "\\mathbb{R}",
+};
+katex.renderToString("\\let\\root=\\sqrt", {
+  globalGroup: true,  // or use \global\let
+  macros,
+});
+// macros now has a definition for "\\root"
+katex.render("c = \\pm\\root{a^2 + b^2}\\in\\RR", element, {
+  displayMode: true,
+  macros,
+});
+```

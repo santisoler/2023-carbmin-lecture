@@ -50,16 +50,14 @@ Geophysical Inversion Facility (GIF) - UBC
 
 ---
 
-### Geophysics: all about physical properties
+<!-- .slide: class="center" -->
 
-<div class="r-stretch centered">
+### Geophysics: all about physical properties
 
 - Density
 - Magnetic susceptibility
 - Conductivity
 - Wave velocity
-
-</div>
 
 ---
 

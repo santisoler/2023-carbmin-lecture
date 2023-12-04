@@ -353,34 +353,149 @@ Airborne gradiometry and magnetic data <!-- .element: class="font-s" -->
 
 ---
 
-# My slides
+<!-- .slide: class="center" data-visibility="hidden" -->
+
+<h2> Is this model <em class="green">the truth</em>? </h2>
+
+### Not necessarily! <!-- .element: class="fragment" -->
+
+<br>
+
+
+<ul>
+  <li class="fragment">
+    Inversions are <strong class="orange">ill-posed problems</strong>:
+  <ul>
+    <li class="fragment"> Non-unique solution </li>
+    <li class="fragment"> Small changes in the model can lead to large changes in the data </li>
+  </ul>
+  </li>
+</ul>
 
 ---
 
 <!-- .slide: class="center" -->
 
-## This is another slide
+<h2> Is this model <em class="green">the truth</em>? </h2>
 
-<div class="centered r-stretch">
+### Not necessarily! <!-- .element: class="fragment" -->
 
-- with
-- items
+<br>
+
+<p class="fragment">
+  Inversions are <strong class="orange">ill-posed problems</strong>:
+  <br>
+  Non-unique solution
+<p>
+
+---
+
+<!-- .slide: class="center" -->
+
+### Changing the regularization term
+
+$$
+  \operatorname*{min}\limits_{\mathbf{m}} \phi(\mathbf{m}) =
+  \textcolor{#a6da95}{\phi_d}(\mathbf{m}) +
+  \beta
+  \underbrace{
+    \textcolor{#ee99a0}{\phi_m}(\mathbf{m})
+  }_{\mathclap{\text{\textcolor{#ee99a0}{regularization term}}}}
+$$
+
+
+<div class="d-flex flex-row justify-center align-center gap-3 font-s">
+
+<p><span class="orange">L<sub>2</sub></span> norm:</p>
+
+$$
+{\phi_m^2}(\mathbf{m}) =
+\lVert
+\mathbf{W}_s (\mathbf{m} - \mathbf{m}_\text{ref})
+\rVert^{\textcolor{#c44500}{2}}
+$$
+
+</div>
+
+<div class="d-flex flex-row justify-center align-center gap-3 font-s">
+
+<p>Sparse (<span class="orange">L<sub>p</sub></span>) norm:</p>
+
+$$
+{\phi_m^2}(\mathbf{m}) =
+\lVert
+\mathbf{W}_s (\mathbf{m} - \mathbf{m}_\text{ref})
+\rVert^{\textcolor{#c44500}{p}}
+,\quad
+p \in [0, 2)
+$$
 
 </div>
 
 ---
 
-1. enumerate
-2. lists
+<!-- .slide: class="center" -->
+
+<div class="d-flex flex-row">
+
+<div class="flex-1">
+<p>L2 inversion result</p>
+<img src="figs/l2-potential-estimation.png" alt="">
+</div>
+
+<div class="flex-1">
+<p>Sparse inversion result</p>
+<img src="figs/sparse-potential-estimation.png" alt="">
+</div>
+
+</div>
+
+---
+
+<div class="r-stretch centered flex-column">
+<div>
+
+### Petrophysically Guided Inversion (PGI)
+
+Including petrophysical data in the inversion
+
+<div class="d-flex flex-row justify-center align-center">
+
+<div class="flex-1">
+<img src="figs/pgi-cross-plot.png" alt="">
+</div>
+<div class="flex-2">
+<img src="figs/pgi-membership.png" alt="">
+</div>
+
+</div>
+
+</div> <!-- unclassed div -->
+</div> <!-- r-stretch -->
+
+<div class="footnote">
+
+Astic et al. (2019, 2020):
+[10.1093/gji/ggz389](https://doi.org/10.1093/gji/ggz389)
+and
+[10.1093/gji/ggaa378](https://doi.org/10.1093/gji/ggaa378)
+
+</div>
+
+---
+
+<!-- .slide: class="center slide-conclusions" -->
+
+## Conclusions
+
+- **Geophysical inversions** allow us to **estimate CO<sub>2</sub> sequestration potential** of serpentinized rocks
+- Not a silver bullet: different inversion results provide different knowledge.
+- **Geologic interpretation** of the inversion results are crucial to better
+  understand the subsurface.
 
 ---
 
 <!-- .slide: class="center" -->
 
-# Code
+# Thank you!
 
-```python
-import harmonica as hm
-
-hm.prism_gravity(coordinates, prisms, density, field="g_z")
-```

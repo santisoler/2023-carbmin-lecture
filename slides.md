@@ -151,9 +151,12 @@ _forward model_ the gravity or magnetic fields (**data** $\mathbf{d}$):
 
 ---
 
+<!-- .slide: class="center" -->
+
 ### Inverse problem
 
-Given some **data** ($\mathbf{d}$), can we get a **model** of the subsurface?
+Given some **data** ($\mathbf{d}$),
+<br> can we get a **model** of the subsurface?
 
 <div class="r-stretch">
 <img src="figs/model-unknown-cartoon.png" alt="">

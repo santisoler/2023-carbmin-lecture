@@ -221,13 +221,23 @@ $$
 
 <!-- .slide: class="center" -->
 
+<div class="r-stretch d-flex flex-column justify-center">
+
 ### Alterations
 
 <img src="figs/reactions.svg" alt="" style="width: 100%;">
 
+</div>
+
+<div class="footnote">
+
+Mitchinson et al. (2020)
+
+</div>
+
 ---
 
-<!-- .slide: class="center data-auto-animate" -->
+<!-- .slide: class="center" -->
 
 ### Physical properties of ultramafic rocks
 
@@ -256,9 +266,16 @@ Serpentinized rocks with **good potential**:
 
 </div>
 
+<div class="footnote">
+
+Cutts et al. (2021).
+doi: [10.1029/2021GC009989](https://doi.org/10.1029/2021GC009989)
+
+</div>
+
 ---
 
-<!-- .slide: class="center" data-auto-animate -->
+<!-- .slide: class="center" -->
 
 ### Physical properties of ultramafic rocks
 
@@ -271,6 +288,13 @@ Serpentinized rocks with **good potential**:
 <div class="flex-1">
 <img src="figs/cross-plot-phys-props.png" alt="" style="width: 80%;">
 </div>
+
+</div>
+
+<div class="footnote">
+
+Cutts et al. (2021).
+doi: [10.1029/2021GC009989](https://doi.org/10.1029/2021GC009989)
 
 </div>
 

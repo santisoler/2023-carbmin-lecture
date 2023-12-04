@@ -219,6 +219,14 @@ $$
 
 ---
 
+<!-- .slide: class="center" -->
+
+### Alterations
+
+<img src="figs/reactions.svg" alt="" style="width: 100%;">
+
+---
+
 <!-- .slide: class="center data-auto-animate" -->
 
 ### Physical properties of ultramafic rocks

@@ -1,8 +1,10 @@
 <!-- .slide: class="center slide-title" -->
 
+<div class="r-stretch">
 <h1 class="title">
 Applying geophysical inversions to carbon mineralization
 </h1>
+</div>
 
 <h2 class="authors">
 Santiago Soler

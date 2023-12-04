@@ -1,8 +1,21 @@
-<!-- .slide: class="center" -->
+<!-- .slide: class="center slide-title" -->
 
-# Applying geophysical inversions to carbon mineralization
+<h1 class="title">
+Applying geophysical inversions to carbon mineralization
+</h1>
 
-## Santiago Soler
+<h2 class="authors">
+Santiago Soler
+</h2>
+
+<h3 class="affiliation">
+Geophysical Inversion Facility (GIF) - UBC
+</h3>
+
+<div class="logos">
+<img src="figs/ubc-dark.png" alt="" style="max-width: 200px">
+<img src="figs/gif-dark.png" alt="" style="max-width: 250px">
+</div>
 
 ---
 
@@ -52,9 +65,17 @@
 
 ## Physical properties affect fields
 
-<!-- Cartoon of dense object and gravity anomaly -->
+<div class="d-flex flex-row">
+<div class="flex-1">
+<img src="figs/prism-density-positive.png" alt="" style="width: 90; height:
+auto;%">
+</div>
+<div class="flex-1">
+<img src="figs/prism-density-negative.png" alt="" style="width: 90%; height:
+auto;">
+</div>
+</div>
 
-<!-- Cartoon of sus object and magnetic anomaly -->
 
 ---
 
@@ -289,6 +310,16 @@ Airborne gradiometry and magnetic data <!-- .element: class="font-s" -->
 <div class="r-stretch">
 <div class="centered">
 <img src="figs/l2-gravity-result.png" alt="" style="width: 90%">
+</div>
+</div>
+
+---
+
+### Inversion of gravity data
+
+<div class="r-stretch">
+<div class="centered">
+<img src="figs/l2-gravity-results-highlighted.png" alt="" style="width: 90%">
 </div>
 </div>
 

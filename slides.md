@@ -258,7 +258,7 @@ Mitchinson et al. (2020)
 
 ---
 
-<!-- .slide: class="center" -->
+<!-- .slide: class="center" data-auto-animate -->
 
 ### Physical properties of ultramafic rocks
 
@@ -296,7 +296,7 @@ doi: [10.1029/2021GC009989](https://doi.org/10.1029/2021GC009989)
 
 ---
 
-<!-- .slide: class="center" -->
+<!-- .slide: class="center" data-auto-animate -->
 
 ### Physical properties of ultramafic rocks
 

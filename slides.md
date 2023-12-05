@@ -402,12 +402,15 @@ Airborne gravity gradiometry and magnetic data <!-- .element: class="font-s" -->
 
 ---
 
+<!-- .slide: class="center" -->
+
 ### Estimations of carbonation potential
 
-<div class="d-flex justify-center" style="height: 100vh">
+<!-- <div class="d-flex justify-center" style="height: 100vh"> -->
 <!-- <iframe src="figs/3d-plot-l2-distance.html" frameborder="0" style="height: 100%; width: 100%;"></iframe> -->
+<!-- </div> -->
+
 <img src="figs/3d-model-static.png" alt="">
-</div>
 
 ---
 

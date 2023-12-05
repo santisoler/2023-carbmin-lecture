@@ -530,5 +530,16 @@ and
 
 <!-- .slide: class="center" -->
 
+## Open-source software
+
+<img
+src="figs/stack-logos/geopython-stack.svg"
+alt=""
+style="width: 100%; margin-top: 1em; background-color: #eaeaea; padding: 1em;">
+
+---
+
+<!-- .slide: class="center" -->
+
 # Thank you!
 

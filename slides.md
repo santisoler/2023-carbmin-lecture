@@ -146,6 +146,12 @@ Geophysical Inversion Facility (GIF) - UBC
 
 ---
 
+<!-- .slide: class="center slide-title" data-auto-animate -->
+
+# Inverse problems
+
+---
+
 ### Forward problem
 
 Given a **model** ($\mathbf{m}$) of the subsurface, we can <br>

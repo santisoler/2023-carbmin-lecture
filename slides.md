@@ -405,29 +405,9 @@ Airborne gravity gradiometry and magnetic data <!-- .element: class="font-s" -->
 ### Estimations of carbonation potential
 
 <div class="d-flex justify-center" style="height: 100vh">
-<iframe src="figs/3d-plot-l2-distance.html" frameborder="0" style="height: 100%; width: 100%;"></iframe>
+<!-- <iframe src="figs/3d-plot-l2-distance.html" frameborder="0" style="height: 100%; width: 100%;"></iframe> -->
+<img src="figs/3d-model-static.png" alt="">
 </div>
-
----
-
-<!-- .slide: class="center" data-visibility="hidden" -->
-
-<h2> Is this model <em class="green">the truth</em>? </h2>
-
-### Not necessarily! <!-- .element: class="fragment" -->
-
-<br>
-
-
-<ul>
-  <li class="fragment">
-    Inversions are <strong class="orange">ill-posed problems</strong>:
-  <ul>
-    <li class="fragment"> Non-unique solution </li>
-    <li class="fragment"> Small changes in the model can lead to large changes in the data </li>
-  </ul>
-  </li>
-</ul>
 
 ---
 

@@ -107,7 +107,7 @@ Geophysical Inversion Facility (GIF) - UBC
 
 ---
 
-<!-- .slide: class="center slide-title" data-auto-animate -->
+<!-- .slide: class="center" data-auto-animate -->
 
 ### Mid ocean ridges
 
@@ -127,7 +127,7 @@ Geophysical Inversion Facility (GIF) - UBC
 
 ---
 
-<!-- .slide: class="center slide-title" data-auto-animate -->
+<!-- .slide: class="center" data-auto-animate -->
 
 ### Mid ocean ridges
 

@@ -67,10 +67,10 @@ Geophysical Inversion Facility (GIF) - UBC
 
 <div class="d-flex flex-row">
 <div class="flex-1">
-<img src="figs/prism-density-positive.png" alt="">
+<img src="figs/prism-density-positive.png" alt="" style="height: 800px;">
 </div>
 <div class="flex-1">
-<img src="figs/prism-density-negative.png" alt="">
+<img src="figs/prism-density-negative.png" alt="" style="height: 800px;">
 </div>
 </div>
 

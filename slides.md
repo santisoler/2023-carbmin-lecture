@@ -523,7 +523,7 @@ and
 
 - **Geophysical inversions** allow us to **estimate CO<sub>2</sub> sequestration potential** of serpentinized rocks
 - Not a silver bullet: different inversion results provide different knowledge.
-- **Geologic interpretation** of the inversion results are crucial to better
+- **Geologic interpretation** of the inversion results is crucial to better
   understand the subsurface.
 
 ---

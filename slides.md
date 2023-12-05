@@ -305,7 +305,7 @@ doi: [10.1029/2021GC009989](https://doi.org/10.1029/2021GC009989)
 
 ### Real world data: Timmins, ON
 
-Airborne gradiometry and magnetic data <!-- .element: class="font-s" -->
+Airborne gravity gradiometry and magnetic data <!-- .element: class="font-s" -->
 
 <div class="r-stretch">
 

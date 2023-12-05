@@ -107,10 +107,10 @@ Geophysical Inversion Facility (GIF) - UBC
 
 ---
 
+<!-- .slide: class="center slide-title" data-auto-animate -->
 
 ### Mid ocean ridges
 
-<div class="r-stretch">
 <div class="centered">
 
 <div>
@@ -124,6 +124,24 @@ Geophysical Inversion Facility (GIF) - UBC
 </div>
 
 </div>
+
+---
+
+<!-- .slide: class="center slide-title" data-auto-animate -->
+
+### Mid ocean ridges
+
+<div class="centered">
+
+<div>
+<img src="figs/oceanic-stripe.png" alt="" style="background: #eaeaea; padding: 0.5em;">
+</div>
+
+<div>
+<p>Magnetic anomalies</p>
+<img src="figs/ridge-mag.png" alt="">
+</div>
+
 </div>
 
 ---

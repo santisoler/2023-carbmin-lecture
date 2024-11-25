@@ -1,47 +1,29 @@
-# Template for creating slides using reveal.js
+# Slides for guest lecture on carbon mineralization
+
+In this repo you can find the slides I used for a guest lecture I gave in
+a course tough by [Dr. Rachel White][rachel] at [EOAS][eoas], [UBC][ubc].
 
 This template uses [reveal.js](https://revealjs.com/) for creating nice looking
 slides by only editing a Markdown file, with some html syntax for adding some
 cool stuff, like columns, fade-in animations, footnotes and more.
 
-## Content
-
-The template contains the following files and directories:
-
-- `slides.md`: Markdown file with the content of the slides.
-- `style.less`: define custom CSS classes using [less](http://lesscss.org/).
-- `index.html`: HTML file that can be served to show the slides, also contains
-  the configurations for reveal.js.
-
-All the dependencies for build the slides are included in the repo so you can
-serve them even without internet connection.
-- The `reveal.js` directory contains the source files for running
-  [reveal.js](https://revealjs.com).
-- The `less` directory contains the sources for running
-  [less](https://lesscss.org/).
-- The `css/fontawesome` directory stores the
-  [fontawesome](https://fontawesome.com/) icons.
-- The `katex` directory has the sources for [KaTeX](https://katex.org/), a math
-  typesetting library for the web.
-
-
 ## Serving the slides
 
 Install [livereload](https://github.com/lepture/python-livereload):
 
-```
+```bash
 pip install livereload
 ```
 
 or
 
-```
+```bash
 conda install livereload -c conda-forge
 ```
 
 Then start a local webserver by running:
 
-```
+```bash
 python serve.py
 ```
 
@@ -51,11 +33,26 @@ repository.
 
 ## Acknowledgements
 
-This template is based on the
+This slides were made using [reveal.js][revealjs], [less][less], [katex][katex]
+and [fontawesome][fontawesome].
+
+Based on the
 [`talk-template`](https://github.com/leouieda/talk-template) created by
 [Leonardo Uieda](https://www.leouieda.com).
 
 ## License
 
-The template (`slides.md`, `index.html`, and `css/style.less`) is licensed under
-a Creative Commons Attribution 4.0 International License.
+The slides (`slides.md`, `index.html`, and `css/style.less`) are licensed
+under a [Creative Commons Attribution 4.0 International License](LICENSE),
+except for figures under `figs` directory.
+
+The notebooks in `notebooks` folder are licensed under [MIT
+License](notebooks/LICENSE_MIT).
+
+[rachel]: https://www.eoas.ubc.ca/people/rachelwhite
+[revealjs]: https://revealjs.com/
+[less]: https://lesscss.org/
+[katex]: https://katex.org/
+[fontawesome]: https://fontawesome.com
+[eoas]: https://www.eoas.ubc.ca/
+[ubc]: https://www.ubc.ca/
